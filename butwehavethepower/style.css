@@ -1,0 +1,12 @@
+#lyrics{
+    /* display: none; */
+    /* width: 180px; */
+}
+
+#text {
+    top: 100px;
+    position: absolute;
+    color: white;
+    background-color: blue;
+    text-align:justify
+}
