@@ -9,50 +9,9 @@
 <body>
 
 <h1 id="title">Union Strike Folk Song</h1>
-<div>
-    <video src="https://www.cs.tufts.edu/comp/120/butwehavethepower.mp4" id="butwehavethepower" controls></video>
-    <div id="text"> Hey buddy </div>
-</div>
-<div id="lyrics">
-    <p class="verse">
-        Lisa:<br>
-        Come gather round, children,<br>
-        It's high time ye learned<br>
-        'Bout a hero named Homer<br>
-        And a devil named Burns.<br>
-    </p>
-    
-    <p class="verse">
-        We'll march 'till we drop <br>
-        The girls and the fellas. <br>
-        We'll fight 'till the death<br> 
-        Or else fold like umbrellas.<br>
-    </p>
 
-    <p class="verse">        So we'll march day and night<br>
-        By the big cooling tower.<br>
-        They have the plant<br>
-    </p>
-
-    <p class="verse">
-                But we have the power.<br>
-    </p>
-
-    <p class="verse">
-            Lenny:<br>
-        Now do "Classical Gas!"<br>
-    </p>
-
-    <p class="verse">
-        So we'll march day and night<br>
-        By the big cooling tower.<br>
-        They have the plant<br>
-    </p>
-
-    <p class="verse">
-        But we have the power.<br>
-    </p>
-</div>
+<video src="https://www.cs.tufts.edu/comp/120/butwehavethepower.mp4" id="butwehavethepower" controls></video>
+<div id="lyrics"></div>
 
 
 <script>
@@ -60,22 +19,38 @@
     const lyrics = document.getElementsByClassName("verse")
 
     const video = document.getElementById("butwehavethepower")
-    const text = document.getElementById("text")
+    const lyric = document.getElementById("lyrics")
 
-//     video.onplay = (event) => {
-//         const textbox = document.getElementById("text")
-//         textbox.innerText = "i change"
-//         console.log(video.currentTime)
-//         video.ondurationchange
-// };
+
     video.addEventListener('timeupdate', e => {
         const currtime = video.currentTime
-        if (currtime<1) console.log('1')
-        else if (currtime<3) text.innerText = lyrics[0].textContent
-        else if (currtime<6) text.innerText = lyrics[3].textContent
-        else if (currtime<9) console.log('4')
-        else if (currtime<12) console.log('5')
- 
+        console.log(currtime)
+        if (currtime<6){}
+        else if (currtime<17) {
+            lyric.innerHTML =  "<p> Lisa:<br> Come gather round, children,<br>It's high time ye learned<br>'Bout a hero named Homer<br> And a devil named Burns.<br> </p>"
+        }
+        else if (currtime<27) {
+            lyric.innerHTML = "<p>We'll march 'till we drop <br>The girls and the fellas. <br>We'll fight 'till the death<br> Or else fold like umbrellas.<br></p>"
+        }
+        else if (currtime<38) lyric.innerHTML = ""
+        else if (currtime<50){
+            lyric.innerHTML = "<p>So we'll march day and night<br>By the big cooling tower.<br>They have the plant<br>But we have the power.<br></p>"
+        }
+        else if (currtime<55) lyric.innerHTML = "<p>Lenny:<br>Now do \"Classical Gas!\"<br></p>"
+        else if (currtime<73) lyric.innerHTML =""
+        else if (currtime<80){
+            lyric.innerHTML = "<p>So we'll march day and night<br>By the big cooling tower.<br>They have the plant<br></p>"
+        }
+        else if (currtime<82){
+            lyric.innerHTML="<p>But we have the power.<br></p>"
+        }
+        else if (currtime<88){
+            lyric.innerHTML = "<p>So we'll march day and night<br>By the big cooling tower.<br>They have the plant<br></p>"
+        }
+        else if (currtime<92){
+            lyric.innerHTML="<p>But we have the power.<br></p>"
+        }
+        else if (currtime>92) lyric.innerHTML=""
     })
 </script>
 </body>

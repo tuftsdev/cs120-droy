@@ -3,10 +3,19 @@
     /* width: 180px; */
 }
 
-#text {
-    top: 100px;
+#lyrics {
+    top: 147px;
     position: absolute;
     color: white;
     background-color: blue;
-    text-align:justify
+    text-align: justify;
+    transform: translate(230px, 201px);
+    margin: 0%;
+}
+p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#butwehavethepower{
+    right: 0px;
 }
