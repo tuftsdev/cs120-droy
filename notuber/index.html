@@ -1,19 +1,13 @@
-<!-- Source: google maps api -->
+<!-- Source: google maps -->
 <html>
   <head>
-    <title>NoTuber</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.js"></script>
+    <title>NoTuber</title>
   </head>
   <body>
     <div id="map"></div>
 
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
+    <script type="module" src="./index.js"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhXJr5eCkwhUUWGi7t1Hpi8Uo8PRHkH64&callback=initMap&v=weekly"
       defer
