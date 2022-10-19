@@ -7,3 +7,5 @@
     - moving css before the name of the html head: size, 1.3 mb; load time 2.35 s
     - minified css (took out the html/body tag still takes up full screen): size, 1.2 mb; load time 2.33 s 
     -with cache enabled: size 1.2 mb; load time, 1.76 s
+    - addition of doctype and html,body css tag increased my performance on lighthouse from 20 something to 66!!! :o
+    
