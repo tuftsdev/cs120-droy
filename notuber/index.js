@@ -69,7 +69,6 @@ function initMap() {
 
     const locations = {};
     const distances = {};
-    let DriverLatLng;
     let myLatLng;
 
     for (let step = 0; step<data.length;step++){
@@ -119,8 +118,8 @@ function initMap() {
         map,
       });
     });
-
-    var flightPlanCoordinates = [myLatLng, DriverLatLng]
+    console.log(locations[closest[0]])
+    var flightPlanCoordinates = [{lat:myLat, lng:myLng}, {lat:locations[closest[0]][0], lng:locations[closest[0]][1]}]
     var flightPath = new google.maps.Polyline({
       path: flightPlanCoordinates,
       geodesic: true,
