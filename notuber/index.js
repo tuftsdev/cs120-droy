@@ -77,9 +77,7 @@ function initMap() {
       temp.push(data[step].lat);
       temp.push(data[step].lng);
       ids = String(data[step].id)
-      // console.log(ids)
       locations[ids] = temp;
-      // locations.push(temp);
     }
 
     for (var key in locations){
@@ -107,6 +105,7 @@ function initMap() {
     const closest = items.pop();
       
     const contentString = "Your closest car is " + closest[1] + " miles away!"
+    // const contentString = "<div> Your closest car is "+closest[1]+" miles away!"+"<br><input type='submit' id='butSubmit' value='Refresh cars!' onclick='getCars()'></div>"
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
       ariaLabel: "Uluru",
@@ -118,7 +117,7 @@ function initMap() {
         map,
       });
     });
-    console.log(locations[closest[0]])
+
     var flightPlanCoordinates = [{lat:myLat, lng:myLng}, {lat:locations[closest[0]][0], lng:locations[closest[0]][1]}]
     var flightPath = new google.maps.Polyline({
       path: flightPlanCoordinates,
@@ -130,11 +129,11 @@ function initMap() {
      
      flightPath.setMap(map);
 
+     setTimeout(getCars, 45000)
+
   }
 }
 
 
 
 window.initMap = initMap;
-
-
