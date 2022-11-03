@@ -1,9 +1,9 @@
 Part 2:
 1) Works locally!
-    -finding your location, showing a marker and panning to your location works!
-    -api call works, showing cars on map from api! - calling of api every 45 seconds
-    -Infowindow with information on the closest car works!
-    -polyline between you and the closest car works!
+    - finding your location, showing a marker and panning to your location works!
+    - api call works, showing cars on map from api! - calling of api every 45 seconds
+    - Infowindow with information on the closest car works!
+    - polyline between you and the closest car works!
 2) google api, a lot of stackoverflow, mdn
 3) 5+ hours
 
