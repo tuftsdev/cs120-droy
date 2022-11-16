@@ -43,7 +43,7 @@ function initMap() {
   
     // "username=lZzlNkup&lat=YOUR_LATITUDE&lng=YOUR_LONGITUDE"
     var http = new XMLHttpRequest();
-    var url = 'https://jordan-marsh.herokuapp.com/rides';
+    var url = 'https://arcane-crag-89041.herokuapp.com/rides';
     var params = "username=lZzlNkup&lat="+myLat+"&lng="+myLng;
     http.open('POST', url, true);
 
