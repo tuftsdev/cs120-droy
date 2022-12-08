@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
+
+    <body>
+        <h1>Introduction</h1>
+        <p>
+           I am a scurity consultant trying to understand the vulnerabilities in the ride hailing app. The application
+           records the location of the user and finds the closest vehicle to them. To do this not only does it 
+           store the passenger data but also the vehicle data. 
+        </p>
+
+        <h2>Methodology</h2>
+        <p>
+            I used white box testing to look for coding vulnerabilities. I looked through the code to see
+            potential places where there could be then confirmed it using burp suite.
+        </p>
+
+        <h2>Abstract of findings</h2>
+        <p>
+            There is a lot of vulnerabilities in this application. Most of which hackers are able to 
+            look at the data for each passenger and vehicles without proper authorization. This is a huge
+            security risk as the app keeps track of a person's login and where they logged in from using
+            longitude and laitude. There's also not a proper authorization technique to check if users 
+            are allowed to even ask for data.
+        </p>
+
+        <h2>Issues: </h2>
+        <blockquote>
+            <h3>Issue 1</h3>
+            <li>Issue = DataBase injection</li>
+            <li>Location = /vehicle.json</li>
+            <li>Severity of issue: High, the user can get a hold of all the vehicle data including the lat and lng which is high risk</li>
+            <li>Description of issue: The code uses sql statement and inserts a where clause using user input without validating, filtering, or sanitizing to it</li>
+            <li>Proof of vulnerability. Please see the code for GET /vehicle.json</li>
+            <li>Resolution. Use prepared statements</li>
+        </blockquote>
+
+        <blockquote>
+            <h3>Issue 2</h3>
+            <li>Issue = DataBase injection</li>
+            <li>Location = /passenger.json</li>
+            <li>Severity of issue: High, the user can get a hold of all the passenger data including the lat and lng which is high risk</li>
+            <li>Description of issue: The code uses sql statement and inserts a where clause using user input without validating, filtering, or sanitizing to it</li>
+            <li>Proof of vulnerability: Please see the code for GET /passenger.json</li>
+            <li>Resolution. Use prepared statements</li>
+        </blockquote>
+
+        <blockquote>
+            <h3>Issue 3</h3>
+            <li>Issue = Does not have list of usernames</li>
+            <li>Location = POST /rides</li>
+            <li>Severity of issue: High, anyone can add data to the table </li>
+            <li>Description of issue: There is no restrictions on who could add data to the table. Plus this means anyone could also check all the passenger and vehicle data </li>
+            <li>Proof of vulnerability. Screenshots are important.</li>
+            <li>Resolution: add a list of usernames that are allowed to add to the database</li>
+        </blockquote>
+
+        <h2>Conclusion</h2>
+        <p>
+            The application has some work to do. Things like adding prepared statements for username or password.
+            Or just adding any sanitization for all user inputs will greatly help this application. An addition 
+            of a list of authorized users would also be very beneficial for the app as it won't allow random 
+            hackers to add or see the database. These are very important steps to take because this application
+            stores location data of users and timestamps of it. This is very scary as anyone can take advantage
+            of this and stalk people or do even worser things. I strongly recommend a rebuild of this application
+            with keping the suggested changes in mind.
+        </p>
+    </body>
+</html>

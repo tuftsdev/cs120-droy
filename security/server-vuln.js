@@ -7,9 +7,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const { Client } = require('pg');
 const client = new Client({
 	connectionString: process.env.DATABASE_URL || "postgres://dev:dev@localhost:5432/notuber",
-	ssl: {
-		rejectUnauthorized: false
-	}
+	// ssl: {
+	// 	rejectUnauthorized: false
+	// }
 });
 client.connect();
 
